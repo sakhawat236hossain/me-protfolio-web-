@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -43,12 +43,14 @@ const skillsGroup = [
 
 const TechnicalExpertise = () => {
   return (
-    <section id="expertise" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
+    <section
+      id="expertise"
+      className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
-        
         {/* Title Section */}
         <div className="text-center mb-16 md:mb-20">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -56,16 +58,19 @@ const TechnicalExpertise = () => {
           >
             Efficiency & Skills
           </motion.p>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-slate-900 dark:text-white"
           >
-            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">Expertise</span>
+            Technical{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+              Expertise
+            </span>
           </motion.h2>
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "100px" }}
             viewport={{ once: true }}
@@ -82,19 +87,20 @@ const TechnicalExpertise = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              whileHover={{ y: -10, scale: 1.02 }} 
+              whileHover={{ y: -10, scale: 1.02 }}
               className="relative group"
             >
-              <div className="h-full bg-white dark:bg-[#0d1526] backdrop-blur-xl border border-slate-200 dark:border-slate-800/50 p-6 md:p-8 rounded-[2.5rem] shadow-xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] dark:hover:shadow-cyan-500/10 transition-all duration-500">
-                
+              <div className="h-full backdrop-blur-xl border border-slate-200 dark:border-slate-800/50 p-6 md:p-8 rounded-[2.5rem] shadow-xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] dark:hover:shadow-cyan-500/10 transition-all duration-500">
                 {/* Header */}
                 <div className="flex items-center gap-5 mb-10">
-                  <motion.div 
+                  <motion.div
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.8 }}
                     className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${group.color} flex items-center justify-center text-white shadow-lg ${group.glow}`}
                   >
-                    <span className="text-2xl font-black">{group.category.charAt(0)}</span>
+                    <span className="text-2xl font-black">
+                      {group.category.charAt(0)}
+                    </span>
                   </motion.div>
                   <h3 className="text-xl font-extrabold text-slate-800 dark:text-white tracking-tight leading-tight group-hover:text-cyan-500 transition-colors">
                     {group.category}
@@ -109,7 +115,7 @@ const TechnicalExpertise = () => {
                         <span className="text-sm md:text-base font-bold text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                           {skill.name}
                         </span>
-                        <motion.span 
+                        <motion.span
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           className="text-xs font-black text-cyan-600 dark:text-cyan-400"
@@ -117,13 +123,17 @@ const TechnicalExpertise = () => {
                           {skill.level}%
                         </motion.span>
                       </div>
-                      
+
                       <div className="h-2.5 w-full bg-slate-100 dark:bg-slate-800/80 rounded-full overflow-hidden p-[1px]">
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           viewport={{ once: true }}
-                          transition={{ duration: 1.5, ease: "circOut", delay: 0.2 + (sIdx * 0.1) }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "circOut",
+                            delay: 0.2 + sIdx * 0.1,
+                          }}
                           className={`h-full bg-gradient-to-r ${group.color} rounded-full relative group-hover:brightness-125 transition-all`}
                         >
                           <div className="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity rounded-full animate-pulse"></div>
@@ -134,7 +144,9 @@ const TechnicalExpertise = () => {
                 </div>
               </div>
 
-              <div className={`absolute -inset-1 bg-gradient-to-r ${group.color} rounded-[2.6rem] blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10`}></div>
+              <div
+                className={`absolute -inset-1 bg-gradient-to-r ${group.color} rounded-[2.6rem] blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10`}
+              ></div>
             </motion.div>
           ))}
         </div>

@@ -1,23 +1,89 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
+import { FaDownload, FaFilePdf } from "react-icons/fa";
 
 const ResumeButton = () => {
-  const resumeUrl = "https://drive.google.com/file/d/1jx9dgtxTAczvuFdgHkyisCM5Oj86yR7S/view?usp=drive_link";
+  // Update this URL to your actual resume file path
+  const resumeUrl = "/resume.pdf"; // Place your resume.pdf in the public folder
+  const resumeFileName = "Sakhawat_Hossain_Resume.pdf";
+
+  const handleDownload = () => {
+    // Create a temporary link element
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = resumeFileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
-    <motion.a
-      href={resumeUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ scale: 1.05 }}
+    <motion.button
+      onClick={handleDownload}
+      whileHover={{
+        scale: 1.05,
+        boxShadow: "0 20px 40px rgba(168, 85, 247, 0.4)",
+      }}
       whileTap={{ scale: 0.95 }}
-      className="relative inline-flex items-center justify-center px-6 py-2.5 overflow-hidden font-bold text-white transition-all duration-300 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full group"
+      className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 overflow-hidden rounded-2xl font-bold transition-all"
     >
-      <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out opacity-0 bg-gradient-to-br from-pink-600 to-orange-400 group-hover:opacity-100"></span>
-      {/* Shine Effect */}
-      <span className="absolute top-0 left-0 w-full h-full bg-white opacity-10 transition-transform duration-700 -translate-x-full group-hover:translate-x-full rotate-12"></span>
-      <span className="relative">Resume</span>
-    </motion.a>
+      {/* Gradient border effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-2xl" />
+
+      {/* Inner background */}
+      <div className="absolute inset-[2px] bg-white dark:bg-slate-900 rounded-2xl transition-colors" />
+
+      {/* Hover gradient overlay */}
+      <motion.div className="absolute inset-[2px] bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+      {/* Content */}
+      <div className="relative flex items-center gap-3 z-10">
+        {/* Animated icon container */}
+        <motion.div
+          animate={{
+            y: [0, -4, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="relative"
+        >
+          <FaDownload className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:text-white transition-colors" />
+
+          {/* Pulsing circle behind icon */}
+          <motion.div
+            className="absolute inset-0 -z-10 bg-purple-400/30 rounded-full"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.5, 0, 0.5],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeOut",
+            }}
+          />
+        </motion.div>
+
+        <span className="text-slate-900 dark:text-white group-hover:text-white transition-colors font-bold tracking-wide">
+          Download Resume
+        </span>
+
+        {/* Decorative PDF icon */}
+        <FaFilePdf className="w-4 h-4 text-red-500 group-hover:text-white transition-colors" />
+      </div>
+
+      {/* Shine effect on hover */}
+      <motion.div
+        className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)",
+        }}
+      />
+    </motion.button>
   );
 };
 

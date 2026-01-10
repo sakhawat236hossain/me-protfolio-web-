@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import HeroSection from "./components/HeroSection/HeroSection";
 import About from "./AboutMe/AboutMe";
 import ExperienceTimeline from "./ExperienceTimeline/ExperienceTimeline";
@@ -7,48 +9,64 @@ import Services from "./Services/Services";
 import ProjectsSection from "./ProjectsSection/ProjectsSection";
 import Contact from "./components/Contact/Contact";
 
+// Reusable animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.6, ease: "easeOut" },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-50 font-sans dark:bg-[#050810] selection:bg-purple-500 selection:text-white">
-    
-      
+    <motion.div
+      className="min-h-screen font-sans selection:bg-purple-500 selection:text-white"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <main className="flex flex-col">
-        
         <section id="home">
           <HeroSection />
         </section>
 
         <div className="space-y-0">
-          <section id="about" className="pt-20">
+          <motion.section id="about" className="pt-20" {...fadeInUp}>
             <About />
-          </section>
-          <section id="experience">
+          </motion.section>
+          <motion.section id="experience" {...fadeInUp}>
             <ExperienceTimeline />
-          </section>
+          </motion.section>
         </div>
 
-        <section id="skills" className="py-20 bg-slate-50/50 dark:bg-white/[0.02]">
+        <motion.section id="skills" className="py-20" {...fadeInUp}>
           <TechnicalExpertise />
           <SkillsSection />
-        </section>
+        </motion.section>
 
-        <section id="services" className="py-10">
+        <motion.section id="services" className="py-10" {...fadeInUp}>
           <Services />
-        </section>
+        </motion.section>
 
-        <section id="projects" className="py-20">
+        <motion.section id="projects" className="py-20" {...fadeInUp}>
           <ProjectsSection />
-        </section>
+        </motion.section>
 
-       
-
-        <section id="contact" className="py-20">
+        <motion.section id="contact" className="py-20" {...fadeInUp}>
           <Contact />
-        </section>
-
+        </motion.section>
       </main>
-
-      
-    </div>
+    </motion.div>
   );
 }
