@@ -19,12 +19,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full pt-20 pb-10 overflow-hidden bg-white dark:bg-[#030712] border-t border-slate-200 dark:border-slate-800/50 transition-colors duration-500">
+    <footer className="relative w-full pt-20 pb-10 overflow-hidden border-t border-purple-200/50 dark:border-purple-900/30 transition-colors duration-500">
       
       {/* --- Animated Background Elements --- */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
-        <div className="absolute top-0 right-[10%] w-72 h-72 bg-purple-500/5 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-0 left-[10%] w-72 h-72 bg-blue-500/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 right-[10%] w-96 h-96 bg-gradient-to-br from-purple-500/5 to-blue-500/5 rounded-full blur-[150px] animate-pulse"></div>
+        <div className="absolute bottom-0 left-[10%] w-96 h-96 bg-gradient-to-br from-pink-500/5 to-purple-500/5 rounded-full blur-[150px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -38,10 +38,10 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-slate-900 dark:text-white uppercase mb-4">
-                Sakhawat<span className="text-purple-600 italic font-serif">.Dev</span>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 dark:from-white dark:via-purple-400 dark:to-white bg-clip-text text-transparent uppercase mb-4">
+                Sakhawat<span className="text-purple-600 dark:text-purple-400 italic font-serif">.Dev</span>
               </h2>
-              <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg leading-relaxed max-w-md mx-auto lg:mx-0 font-medium">
+              <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed max-w-md mx-auto lg:mx-0 font-medium">
                 Designing and developing high-performance web experiences with a focus on clean aesthetics and scalable code.
               </p>
             </motion.div>
@@ -49,7 +49,7 @@ const Footer = () => {
 
           {/* 2. Social Connect Section */}
           <div className="lg:col-span-4 space-y-8">
-            <h4 className="text-slate-400 dark:text-slate-500 font-black uppercase tracking-[0.3em] text-[10px] text-center lg:text-left">
+            <h4 className="text-purple-600 dark:text-purple-400 font-black uppercase tracking-[0.3em] text-[10px] text-center lg:text-left">
               Digital Presence
             </h4>
             <div className="flex flex-wrap justify-center lg:justify-start gap-3">
@@ -60,12 +60,12 @@ const Footer = () => {
                   target="_blank" 
                   whileHover={{ y: -5, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex items-center gap-2 px-5 py-3 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 group shadow-sm"
+                  className="flex items-center gap-2 px-5 py-3 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950/30 dark:to-blue-950/30 rounded-2xl border border-purple-200 dark:border-purple-800/50 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group"
                 >
-                  <span className="text-xl text-slate-600 dark:text-slate-400 group-hover:text-purple-600 transition-colors">
+                  <span className="text-xl text-slate-700 dark:text-slate-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {item.icon}
                   </span>
-                  <span className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
                     {item.label}
                   </span>
                 </motion.a>
@@ -78,20 +78,20 @@ const Footer = () => {
             <motion.button
               onClick={scrollToTop}
               whileHover={{ y: -5 }}
-              className="w-14 h-14 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center shadow-2xl group transition-all"
+              className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 text-white flex items-center justify-center shadow-2xl shadow-purple-500/30 group transition-all hover:shadow-purple-500/50"
             >
               <FaArrowUp className="group-hover:animate-bounce transition-all" />
             </motion.button>
-            <p className="mt-4 text-[10px] font-black uppercase tracking-widest text-slate-400">Back to Top</p>
+            <p className="mt-4 text-[10px] font-black uppercase tracking-widest text-purple-600 dark:text-purple-400">Back to Top</p>
           </div>
         </div>
 
         {/* --- Bottom Strip --- */}
-        <div className="pt-10 border-t border-slate-100 dark:border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="pt-10 border-t border-purple-200/50 dark:border-purple-900/30 flex flex-col md:flex-row justify-between items-center gap-8">
           
           {/* Copyright Info */}
-          <div className="text-slate-400 dark:text-slate-500 text-xs font-medium tracking-wide order-2 md:order-1 text-center md:text-left leading-loose">
-            © {currentYear} <span className="text-slate-900 dark:text-white font-bold">MD. Sakhawat Hossain</span>. 
+          <div className="text-slate-500 dark:text-slate-400 text-xs font-medium tracking-wide order-2 md:order-1 text-center md:text-left leading-loose">
+            © {currentYear} <span className="text-purple-600 dark:text-purple-400 font-bold">MD. Sakhawat Hossain</span>. 
             Crafted with passion in Dhaka, BD.
           </div>
 
@@ -111,8 +111,8 @@ const Footer = () => {
           
           {/* Legal / Policy Links */}
           <div className="flex gap-8 order-3">
-             <a href="#" className="text-[10px] font-bold text-slate-400 hover:text-purple-600 uppercase tracking-widest transition-colors">Privacy</a>
-             <a href="#" className="text-[10px] font-bold text-slate-400 hover:text-purple-600 uppercase tracking-widest transition-colors">Terms</a>
+             <a href="#" className="text-[10px] font-bold text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 uppercase tracking-widest transition-colors">Privacy</a>
+             <a href="#" className="text-[10px] font-bold text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 uppercase tracking-widest transition-colors">Terms</a>
           </div>
 
         </div>
