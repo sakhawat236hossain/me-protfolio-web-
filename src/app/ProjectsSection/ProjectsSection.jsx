@@ -10,19 +10,11 @@ import AllApps from "../../../assets/AllApps.png";
 import greenNest from "../../../assets/greenNest.png";
 import dragonNews from "../../../assets/dragonNews.png";
 import ticketBooking from "../../../assets/Book.png";
+import hishabKitab from "../../../assets/hishabKitab.png";
+
 
 const projectsData = [
-  {
-    title: "Green Nest",
-    tags: ["React", "Tailwind", "Firebase"],
-    description:
-      "A premium eco-commerce platform for plant enthusiasts. Features include plant care guides and environmental awareness modules.",
-    image: greenNest,
-    liveLink: "https://greennest-assigment-9.firebaseapp.com/",
-    githubClient: "https://github.com/sakhawat236hossain/Green-Nest-A9",
-    color: "from-emerald-400 via-teal-500 to-cyan-600",
-  },
-  {
+    {
     title: "Ticket Booking",
     tags: ["Next.js", "Node.js", "MongoDB"],
     description:
@@ -34,6 +26,16 @@ const projectsData = [
     color: "from-rose-500 via-pink-600 to-purple-600",
   },
   {
+  title: "Care.xyz",
+  tags: ["Next.js", "React", "Tailwind", "Node.js", "MERN Stack"],
+  description:
+    "A role-based service platform where admins can manage services and users can purchase and track them in their dashboard. Built to practice full-stack integration with Next.js and real-time dashboard features.",
+  image: careXyz,
+  liveLink: "https://care-xyz-client-web.vercel.app/", 
+  githubClient: "https://github.com/sakhawat236hossain/Care-xyz-client", 
+  color: "from-indigo-400 via-purple-500 to-pink-600", 
+},
+  {
     title: "Home Nest",
     tags: ["MERN Stack", "Express.js", "Dashboard"],
     description:
@@ -43,6 +45,20 @@ const projectsData = [
     githubClient: "https://github.com/sakhawat236hossain/Home-Nest-client",
     color: "from-blue-600 via-indigo-600 to-violet-700",
   },
+
+
+  {
+    title: "Green Nest",
+    tags: ["React", "Tailwind", "Firebase"],
+    description:
+      "A premium eco-commerce platform for plant enthusiasts. Features include plant care guides and environmental awareness modules.",
+    image: greenNest,
+    liveLink: "https://greennest-assigment-9.firebaseapp.com/",
+    githubClient: "https://github.com/sakhawat236hossain/Green-Nest-A9",
+    color: "from-emerald-400 via-teal-500 to-cyan-600",
+  },
+
+
   {
     title: "Apps Hub",
     tags: ["JavaScript", "Tools", "React"],
@@ -61,6 +77,16 @@ const projectsData = [
     image: dragonNews,
     liveLink: "https://all-news-data.netlify.app/",
     githubClient: "https://github.com/sakhawat236hossain/all-app-data",
+    color: "from-purple-600 via-fuchsia-500 to-pink-500",
+  },
+  {
+    title: "Hishab Kitab",
+    tags: ["Next.js", "MongoDB", "Typescript"],
+    description:
+      "A real-time Habit tracking application with interactive dashboards and data visualization, built to practice Next.js and MongoDB integration.",
+    image: hishabKitab,
+    liveLink: "https://hishabkitam.vercel.app/",
+    githubClient: "https://github.com/sakhawat236hossain/HishabKitab",
     color: "from-purple-600 via-fuchsia-500 to-pink-500",
   },
 ];

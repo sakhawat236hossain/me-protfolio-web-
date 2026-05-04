@@ -131,26 +131,27 @@ const Navbar = () => {
 
         {/* --- Mobile Menu Button --- */}
         <motion.div
-          className="md:hidden flex items-center"
+          className="md:hidden flex items-center gap-3"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
+          <ThemeToggle />
           <motion.button
             onClick={toggleMenu}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`p-2 rounded-xl transition-all duration-300 ${
-              scrolled
-                ? "text-slate-900 dark:text-white bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950/50 dark:to-blue-950/50 border border-purple-200 dark:border-purple-800/50"
-                : "text-slate-900 dark:text-white bg-white/10 dark:bg-slate-900/30 backdrop-blur-md border border-white/20 dark:border-slate-700/50"
-            }`}
+            className="p-3 rounded-xl bg-gradient-to-br from-purple-600 via-purple-500 to-blue-600 dark:from-purple-500 dark:via-purple-600 dark:to-blue-500 text-white shadow-lg shadow-purple-500/40 dark:shadow-purple-500/30 border border-purple-400/50 dark:border-purple-400/40 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/60"
           >
             <motion.div
               animate={{ rotate: isOpen ? 90 : 0 }}
               transition={{ duration: 0.3 }}
             >
-              {isOpen ? <IoClose size={28} /> : <HiMenuAlt3 size={28} />}
+              {isOpen ? (
+                <IoClose size={24} className="drop-shadow-lg" />
+              ) : (
+                <HiMenuAlt3 size={24} className="drop-shadow-lg" />
+              )}
             </motion.div>
           </motion.button>
         </motion.div>
@@ -170,17 +171,31 @@ const Navbar = () => {
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              exit={{ x: "100" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 w-[75%] h-full bg-gradient-to-br from-white to-purple-50/30 dark:from-slate-950 dark:to-purple-950/20 z-[100] md:hidden shadow-2xl flex flex-col p-8 border-l border-purple-200 dark:border-purple-900/30"
+              className="fixed right-0 top-0 w-[85%] sm:w-[75%] max-w-sm h-full bg-gradient-to-br from-white to-purple-50/30 dark:from-slate-950 dark:to-purple-950/20 z-[100] md:hidden shadow-2xl flex flex-col p-6 sm:p-8 border-l border-purple-200 dark:border-purple-900/30"
             >
-              <div className="flex justify-end mb-12">
-                <button onClick={toggleMenu} className="p-2 text-slate-500">
-                  <IoClose size={32} />
-                </button>
+              <div className="flex justify-between items-center mb-10">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span className="text-2xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                    MENU
+                  </span>
+                </motion.div>
+                <motion.button
+                  onClick={toggleMenu}
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-2 rounded-xl bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-600 dark:text-purple-400 hover:shadow-lg transition-all"
+                >
+                  <IoClose size={28} />
+                </motion.button>
               </div>
 
-              <div className="flex flex-col space-y-6">
+              <div className="flex flex-col space-y-4 sm:space-y-6">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.id}
@@ -201,7 +216,7 @@ const Navbar = () => {
                       offset={-70}
                       activeClass="text-purple-600 scale-110"
                       onClick={toggleMenu}
-                      className="text-3xl font-black text-slate-800 dark:text-white block tracking-tighter hover:text-purple-600 transition-all relative group"
+                      className="text-2xl sm:text-3xl font-black text-slate-800 dark:text-white block tracking-tighter hover:text-purple-600 dark:hover:text-purple-400 transition-all relative group py-2"
                     >
                       <motion.span
                         whileHover={{ x: 10 }}
@@ -210,7 +225,7 @@ const Navbar = () => {
                         {link.name}
                       </motion.span>
                       <motion.span
-                        className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-purple-600 to-pink-500"
+                        className="absolute left-0 bottom-0 h-0.5 sm:h-1 bg-gradient-to-r from-purple-600 to-pink-500"
                         initial={{ width: 0 }}
                         whileHover={{ width: "100%" }}
                         transition={{ duration: 0.3 }}
@@ -221,13 +236,14 @@ const Navbar = () => {
               </div>
 
               <motion.div
-                className="mt-auto pb-10 space-y-6"
+                className="mt-auto pt-8 space-y-4 border-t border-purple-200 dark:border-purple-900/30"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <ThemeToggle />
-                <ResumeButton />
+                <div className="flex flex-col gap-3">
+                  <ResumeButton />
+                </div>
               </motion.div>
             </motion.div>
           </>
