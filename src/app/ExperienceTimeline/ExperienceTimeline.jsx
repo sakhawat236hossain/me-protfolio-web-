@@ -6,46 +6,48 @@ import {
   FaCode,
   FaCertificate,
   FaRocket,
-  FaChevronRight,
 } from "react-icons/fa";
 
-const timelineData = [
+const experienceData = [
   {
-    title: "Web Development Mastery",
-    organization: "Programming Hero",
-    date: "July 2025 - Present",
+    title: "MERN Stack Developer",
+    organization: "Personal Projects & Freelance",
+    date: "Dec 2024 - Present",
     description:
-      "Intensive training on the MERN Stack. Developed deep expertise in React.js, Node.js, and modern web architecture through 12+ industry-standard projects.",
+      "Built production-grade applications with React, Next.js, Node.js, and MongoDB, delivering responsive interfaces with secure backend workflows.",
     icon: <FaCode />,
     color: "from-purple-600 to-blue-600",
     glow: "shadow-purple-500/20",
   },
   {
-    title: "Self-Learning & Innovation",
-    organization: "Open Source / Personal Lab",
-    date: "Ongoing Journey",
+    title: "Full-Stack Product Development",
+    organization: "TicketBari & Care.xyz",
+    date: "2025 - 2026",
     description:
-      "Deep-diving into Next.js 14+, Framer Motion for advanced animations, and system design to build scalable and high-performance applications.",
+      "Designed end-to-end booking platforms with role-based dashboards, payment integration, and analytics-driven interfaces.",
     icon: <FaRocket />,
     color: "from-pink-600 to-rose-600",
     glow: "shadow-pink-500/20",
   },
+];
+
+const educationData = [
   {
-    title: "Rooted in Discipline",
-    organization: "Madrasa Academic Background",
-    date: "Formative Years",
+    title: "Web Development Bootcamp",
+    organization: "Programming Hero",
+    date: "July 2025",
     description:
-      "My traditional background instilled in me profound patience and a strong ethical foundation—qualities I now apply to complex debugging and problem-solving.",
+      "Completed intensive MERN stack training focusing on React, Node.js, databases, and modern development workflows.",
     icon: <FaGraduationCap />,
     color: "from-blue-600 to-cyan-600",
     glow: "shadow-blue-500/20",
   },
   {
-    title: "The Next Big Step",
-    organization: "Aspiring MERN Developer",
-    date: "Ready for 2026",
+    title: "Madrasa Academic Background",
+    organization: "Traditional Studies",
+    date: "Formative Years",
     description:
-      "Actively looking for opportunities to contribute to a professional team and grow as a software engineer while delivering high-quality web solutions.",
+      "Built a foundation of discipline, patience, and analytical thinking that now supports my problem-solving in software development.",
     icon: <FaCertificate />,
     color: "from-emerald-600 to-teal-600",
     glow: "shadow-emerald-500/20",
@@ -84,76 +86,97 @@ const ExperienceTimeline = () => {
           </motion.h2>
         </div>
 
-        {/* --- Timeline Wrapper --- */}
-        <div className="relative">
-          {/* Central Vertical Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-slate-200 dark:via-slate-800 to-transparent -translate-x-1/2"></div>
-
-          <div className="space-y-16">
-            {timelineData.map((item, index) => (
-              <div
-                key={index}
-                className="relative flex flex-col md:flex-row items-center justify-between w-full"
-              >
-                {/* --- Content Card --- */}
+        <div className="grid gap-12 lg:grid-cols-2">
+          <div>
+            <div className="mb-10">
+              <h3 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight mb-3">
+                Professional Experience
+              </h3>
+              <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
+                Built production-ready applications, dashboards, and APIs for
+                real-world digital products.
+              </p>
+            </div>
+            <div className="space-y-10">
+              {experienceData.map((item, index) => (
                 <motion.div
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  className={`w-full md:w-[45%] pl-12 md:pl-0 ${
-                    index % 2 === 0
-                      ? "md:order-1 md:text-right"
-                      : "md:order-3 md:text-left"
-                  }`}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group relative rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6 shadow-2xl hover:border-purple-500/40 transition-all"
                 >
-                  <div className="group relative p-1 rounded-3xl bg-gradient-to-br from-slate-200/50 dark:from-slate-800/50 to-transparent hover:from-purple-500/40 transition-all duration-500">
-                    <div className="p-6 md:p-8 rounded-[22px] backdrop-blur-xl transition-all">
-                      <div
-                        className={`inline-flex items-center gap-2 text-[10px] font-black tracking-widest text-purple-500 uppercase mb-3 ${
-                          index % 2 === 0 ? "md:flex-row-reverse" : ""
-                        }`}
-                      >
-                        <span className="w-8 h-[1px] bg-purple-500/30"></span>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div
+                      className={`w-14 h-14 rounded-3xl bg-gradient-to-br ${item.color} ${item.glow} text-white flex items-center justify-center shadow-lg`}
+                    >
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.35em] text-purple-600 font-black">
                         {item.date}
-                      </div>
-
-                      <h3 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-2 leading-tight group-hover:text-purple-500 transition-colors">
+                      </p>
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-white">
                         {item.title}
-                      </h3>
-
-                      <h4 className="text-sm font-bold text-slate-400 mb-5 flex items-center gap-2 justify-start md:justify-end lg:justify-start">
-                        {index % 2 !== 0 && (
-                          <FaChevronRight className="text-[10px] text-purple-500" />
-                        )}
-                        {item.organization}
-                        {index % 2 === 0 && (
-                          <FaChevronRight className="text-[10px] text-purple-500 rotate-180 hidden md:block" />
-                        )}
                       </h4>
-
-                      <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-                        {item.description}
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        {item.organization}
                       </p>
                     </div>
                   </div>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {item.description}
+                  </p>
                 </motion.div>
+              ))}
+            </div>
+          </div>
 
-                {/* --- Central Point (Icon) --- */}
-                <div className="absolute left-4 md:left-1/2 top-8 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 z-20">
-                  <motion.div
-                    whileHover={{ scale: 1.2, rotate: 360 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} ${item.glow} text-white flex items-center justify-center shadow-lg border-4 border-white dark:border-[#020617] cursor-pointer`}
-                  >
-                    {item.icon}
-                  </motion.div>
-                </div>
-
-                {/* --- Spacer for Grid --- */}
-                <div className="hidden md:block w-[45%] md:order-2"></div>
-              </div>
-            ))}
+          <div>
+            <div className="mb-10">
+              <h3 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight mb-3">
+                Education & Growth
+              </h3>
+              <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
+                Foundational training and academic discipline that strengthen my
+                software development approach.
+              </p>
+            </div>
+            <div className="space-y-10">
+              {educationData.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group relative rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6 shadow-2xl hover:border-cyan-500/40 transition-all"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div
+                      className={`w-14 h-14 rounded-3xl bg-gradient-to-br ${item.color} ${item.glow} text-white flex items-center justify-center shadow-lg`}
+                    >
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.35em] text-cyan-600 font-black">
+                        {item.date}
+                      </p>
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-white">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        {item.organization}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
