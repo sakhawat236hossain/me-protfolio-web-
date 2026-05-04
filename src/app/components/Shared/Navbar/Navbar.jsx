@@ -141,7 +141,7 @@ const Navbar = () => {
             onClick={toggleMenu}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="p-3 rounded-xl bg-gradient-to-br from-purple-600 via-purple-500 to-blue-600 dark:from-purple-500 dark:via-purple-600 dark:to-blue-500 text-white shadow-lg shadow-purple-500/40 dark:shadow-purple-500/30 border border-purple-400/50 dark:border-purple-400/40 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/60"
+            className="cursor-pointer p-3 rounded-xl bg-gradient-to-br from-purple-600 via-purple-500 to-blue-600 dark:from-purple-500 dark:via-purple-600 dark:to-blue-500 text-white shadow-lg shadow-purple-500/40 dark:shadow-purple-500/30 border border-purple-400/50 dark:border-purple-400/40 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/60"
           >
             <motion.div
               animate={{ rotate: isOpen ? 90 : 0 }}
@@ -189,7 +189,7 @@ const Navbar = () => {
                   onClick={toggleMenu}
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-2 rounded-xl bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-600 dark:text-purple-400 hover:shadow-lg transition-all"
+                  className="cursor-pointer p-2 rounded-xl bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-600 dark:text-purple-400 hover:shadow-lg transition-all"
                 >
                   <IoClose size={28} />
                 </motion.button>
@@ -216,7 +216,7 @@ const Navbar = () => {
                       offset={-70}
                       activeClass="text-purple-600 scale-110"
                       onClick={toggleMenu}
-                      className="text-2xl sm:text-3xl font-black text-slate-800 dark:text-white block tracking-tighter hover:text-purple-600 dark:hover:text-purple-400 transition-all relative group py-2"
+                      className="cursor-pointer text-2xl sm:text-3xl font-black text-slate-800 dark:text-white block tracking-tighter hover:text-purple-600 dark:hover:text-purple-400 transition-all relative group py-2"
                     >
                       <motion.span
                         whileHover={{ x: 10 }}

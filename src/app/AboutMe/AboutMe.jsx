@@ -179,7 +179,7 @@ const About = () => {
               smooth={true}
               duration={500}
               offset={-70}
-              className="inline-flex items-center justify-center rounded-3xl border border-purple-600 px-8 py-4 text-sm font-black text-purple-600 transition hover:bg-purple-600 hover:text-white"
+              className="cursor-pointer inline-flex items-center justify-center rounded-3xl border border-purple-600 px-8 py-4 text-sm font-black text-purple-600 transition hover:bg-purple-600 hover:text-white"
             >
               Contact Me
             </Link>

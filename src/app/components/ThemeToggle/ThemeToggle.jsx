@@ -23,7 +23,7 @@ export default function ThemeToggle() {
   return (
     <motion.button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative group"
+      className="relative group cursor-pointer"
       whileTap={{ scale: 0.9 }}
       aria-label="Toggle theme"
     >

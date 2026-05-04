@@ -166,7 +166,7 @@ const Contact = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 blur-3xl rounded-full"></div>
 
               <form onSubmit={onSubmit} className="space-y-5">
-                <motion.div 
+                <motion.div
                   className="grid grid-cols-1 md:grid-cols-2 gap-5"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +228,7 @@ const Contact = () => {
                   whileHover={{ scale: 1.01, translateY: -2 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 text-white font-black rounded-xl flex items-center justify-center gap-3 transition-all shadow-xl shadow-purple-500/20 disabled:opacity-50 group overflow-hidden relative"
+                  className="cursor-pointer w-full py-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 text-white font-black rounded-xl flex items-center justify-center gap-3 transition-all shadow-xl shadow-purple-500/20 disabled:opacity-50 group overflow-hidden relative"
                 >
                   <span className="relative z-10 flex items-center gap-3 tracking-widest uppercase text-xs">
                     {isSubmitting ? "Dispatching..." : "Send Brief"}

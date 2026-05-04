@@ -82,7 +82,7 @@ const Footer = () => {
                   target="_blank"
                   whileHover={{ y: -5, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950/30 dark:to-blue-950/30 rounded-xl sm:rounded-2xl border border-purple-200 dark:border-purple-800/50 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group"
+                  className="cursor-pointer flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950/30 dark:to-blue-950/30 rounded-xl sm:rounded-2xl border border-purple-200 dark:border-purple-800/50 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group"
                 >
                   <span className="text-lg sm:text-xl text-slate-700 dark:text-slate-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {item.icon}
@@ -100,7 +100,7 @@ const Footer = () => {
             <motion.button
               onClick={scrollToTop}
               whileHover={{ y: -5 }}
-              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 text-white flex items-center justify-center shadow-xl sm:shadow-2xl shadow-purple-500/30 group transition-all hover:shadow-purple-500/50"
+              className="cursor-pointer w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 text-white flex items-center justify-center shadow-xl sm:shadow-2xl shadow-purple-500/30 group transition-all hover:shadow-purple-500/50"
             >
               <FaArrowUp className="text-sm sm:text-base group-hover:animate-bounce transition-all" />
             </motion.button>
@@ -139,13 +139,13 @@ const Footer = () => {
           <div className="flex gap-6 sm:gap-8 order-3">
             <a
               href="#"
-              className="text-[10px] font-bold text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 uppercase tracking-widest transition-colors"
+              className="cursor-pointer text-[10px] font-bold text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 uppercase tracking-widest transition-colors"
             >
               Privacy
             </a>
             <a
               href="#"
-              className="text-[10px] font-bold text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 uppercase tracking-widest transition-colors"
+              className="cursor-pointer text-[10px] font-bold text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 uppercase tracking-widest transition-colors"
             >
               Terms
             </a>

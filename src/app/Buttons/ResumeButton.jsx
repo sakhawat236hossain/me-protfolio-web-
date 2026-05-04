@@ -25,7 +25,7 @@ const ResumeButton = () => {
         boxShadow: "0 20px 40px rgba(168, 85, 247, 0.4)",
       }}
       whileTap={{ scale: 0.95 }}
-      className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 overflow-hidden rounded-2xl font-bold transition-all"
+      className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 overflow-hidden rounded-2xl font-bold transition-all cursor-pointer"
     >
       {/* Gradient border effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-2xl" />

@@ -163,7 +163,7 @@ const ProjectsSection = () => {
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-300 ${
+              className={`cursor-pointer px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-300 ${
                 activeFilter === category
                   ? "bg-purple-600 text-white shadow-lg shadow-purple-500/20"
                   : "bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700"
@@ -238,7 +238,7 @@ const ProjectsSection = () => {
                         />
                         <Link
                           href={`/projects/${project.slug}`}
-                          className="flex flex-col items-center gap-2 text-white"
+                          className="cursor-pointer flex flex-col items-center gap-2 text-white"
                         >
                           <div className="w-14 h-14 bg-white/10 hover:bg-white hover:text-slate-900 backdrop-blur-md rounded-2xl border border-white/30 flex items-center justify-center transition-all duration-300 shadow-2xl">
                             <FaServer size={22} />
@@ -296,7 +296,7 @@ const ProjectsSection = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setShowAll(!showAll)}
-            className="group relative px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-4xl font-black overflow-hidden shadow-2xl transition-all"
+            className="cursor-pointer group relative px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-4xl font-black overflow-hidden shadow-2xl transition-all"
           >
             <span className="relative z-10 uppercase tracking-widest text-xs flex items-center gap-3">
               {showAll ? "Show Less" : "Discover More Projects"}
@@ -329,7 +329,7 @@ const ProjectLink = ({ href, icon, label }) => (
     href={href}
     target="_blank"
     whileHover={{ y: -5 }}
-    className="flex flex-col items-center gap-2 text-white group/link"
+    className="cursor-pointer flex flex-col items-center gap-2 text-white group/link"
   >
     <div className="w-14 h-14 bg-white/10 hover:bg-white hover:text-slate-900 backdrop-blur-md rounded-2xl border border-white/30 flex items-center justify-center transition-all duration-300 shadow-2xl">
       {icon}
