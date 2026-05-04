@@ -60,11 +60,28 @@ const HeroSection = () => {
             />
           </div>
 
+          <motion.div
+            className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-3 rounded-full bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200 shadow-sm">
+              <span className="text-purple-600">•</span> 10+ Projects
+            </div>
+            <div className="inline-flex items-center gap-3 rounded-full bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200 shadow-sm">
+              <span className="text-purple-600">•</span> 1+ Years Experience
+            </div>
+            <div className="inline-flex items-center gap-3 rounded-full bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200 shadow-sm">
+              <span className="text-purple-600">•</span> Open for opportunities
+            </div>
+          </motion.div>
+
           <motion.p
             className="mt-6 text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.9 }}
           >
             I specialize in building high-performance, responsive, and visually
             stunning web applications. Turning complex ideas into simple,
@@ -78,7 +95,6 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
-            {/* Hire Me Button - Primary Action */}
             <Link
               to="contact"
               smooth={true}
