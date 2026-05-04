@@ -4,7 +4,7 @@ import { FaDownload, FaFilePdf } from "react-icons/fa";
 
 const ResumeButton = () => {
   // Update this URL to your actual resume file path
-  const resumeUrl = "/resume.pdf"; // Place your resume.pdf in the public folder
+  const resumeUrl = "/resume2.pdf"; // Place your resume.pdf in the public folder
   const resumeFileName = "Sakhawat_Hossain_Resume.pdf";
 
   const handleDownload = () => {
