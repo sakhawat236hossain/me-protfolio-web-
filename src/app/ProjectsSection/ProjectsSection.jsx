@@ -11,10 +11,10 @@ import greenNest from "../../../assets/greenNest.png";
 import dragonNews from "../../../assets/dragonNews.png";
 import ticketBooking from "../../../assets/Book.png";
 import hishabKitab from "../../../assets/hishabKitab.png";
-
+import careXyz from "../../../assets/careXyz.png";
 
 const projectsData = [
-    {
+  {
     title: "Ticket Booking",
     tags: ["Next.js", "Node.js", "MongoDB"],
     description:
@@ -26,15 +26,15 @@ const projectsData = [
     color: "from-rose-500 via-pink-600 to-purple-600",
   },
   {
-  title: "Care.xyz",
-  tags: ["Next.js", "React", "Tailwind", "Node.js", "MERN Stack"],
-  description:
-    "A role-based service platform where admins can manage services and users can purchase and track them in their dashboard. Built to practice full-stack integration with Next.js and real-time dashboard features.",
-  image: careXyz,
-  liveLink: "https://care-xyz-client-web.vercel.app/", 
-  githubClient: "https://github.com/sakhawat236hossain/Care-xyz-client", 
-  color: "from-indigo-400 via-purple-500 to-pink-600", 
-},
+    title: "Care.xyz",
+    tags: ["Next.js", "React", "Tailwind", "Node.js", "MERN Stack"],
+    description:
+      "A role-based service platform where admins can manage services and users can purchase and track them in their dashboard. Built to practice full-stack integration with Next.js and real-time dashboard features.",
+    image: careXyz,
+    liveLink: "https://care-xyz-client-web.vercel.app/",
+    githubClient: "https://github.com/sakhawat236hossain/Care-xyz-client",
+    color: "from-indigo-400 via-purple-500 to-pink-600",
+  },
   {
     title: "Home Nest",
     tags: ["MERN Stack", "Express.js", "Dashboard"],
@@ -46,7 +46,6 @@ const projectsData = [
     color: "from-blue-600 via-indigo-600 to-violet-700",
   },
 
-
   {
     title: "Green Nest",
     tags: ["React", "Tailwind", "Firebase"],
@@ -57,7 +56,6 @@ const projectsData = [
     githubClient: "https://github.com/sakhawat236hossain/Green-Nest-A9",
     color: "from-emerald-400 via-teal-500 to-cyan-600",
   },
-
 
   {
     title: "Apps Hub",
@@ -115,8 +113,8 @@ const ProjectsSection = () => {
       className="relative w-full py-24 md:py-32 px-4 md:px-8 overflow-hidden"
     >
       {/* Dynamic Background Glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[120px] -z-10 animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] -z-10 animate-pulse delay-700"></div>
+      <div className="absolute top-0 right-0 w-125 h-125 bg-purple-600/5 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 w-125 h-125 bg-blue-600/5 rounded-full blur-[120px] -z-10 animate-pulse delay-700"></div>
 
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
@@ -127,7 +125,7 @@ const ProjectsSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               className="flex items-center gap-3"
             >
-              <span className="w-12 h-[2px] bg-purple-500"></span>
+              <span className="w-12 h-0.5 bg-purple-500"></span>
               <span className="text-purple-600 dark:text-purple-400 font-black tracking-[0.3em] uppercase text-xs">
                 Portfolio
               </span>
@@ -138,7 +136,7 @@ const ProjectsSection = () => {
               className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white tracking-tighter"
             >
               Selected{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-pink-500">
                 Works
               </span>
             </motion.h2>
@@ -189,7 +187,7 @@ const ProjectsSection = () => {
 
                     {/* Hover Overlay */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-b ${project.color} opacity-0 group-hover:opacity-90 transition-all duration-500 flex items-center justify-center gap-6 backdrop-blur-[4px]`}
+                      className={`absolute inset-0 bg-linear-to-b ${project.color} opacity-0 group-hover:opacity-90 transition-all duration-500 flex items-center justify-center gap-6 backdrop-blur-xs`}
                     >
                       <ProjectLink
                         href={project.liveLink}
@@ -212,7 +210,7 @@ const ProjectsSection = () => {
                   </motion.div>
 
                   {/* Content Details */}
-                  <div className="p-8 flex-grow space-y-4">
+                  <div className="p-8 grow space-y-4">
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <span
@@ -235,7 +233,7 @@ const ProjectsSection = () => {
 
                   {/* Aesthetic Footer Line */}
                   <div
-                    className={`h-2 w-full bg-gradient-to-r ${project.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                    className={`h-2 w-full bg-linear-to-r ${project.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
                   ></div>
                 </div>
               </motion.div>
@@ -249,7 +247,7 @@ const ProjectsSection = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setShowAll(!showAll)}
-            className="group relative px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-[2rem] font-black overflow-hidden shadow-2xl transition-all"
+            className="group relative px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-4xl font-black overflow-hidden shadow-2xl transition-all"
           >
             <span className="relative z-10 uppercase tracking-widest text-xs flex items-center gap-3">
               {showAll ? "Show Less" : "Discover More Projects"}
@@ -269,7 +267,7 @@ const ProjectsSection = () => {
                 ></path>
               </svg>
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </motion.button>
         </div>
       </div>
