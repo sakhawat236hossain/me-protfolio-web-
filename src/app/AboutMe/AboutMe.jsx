@@ -2,7 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 import myIMG from "../../../assets/profile.jpg";
+import ResumeButton from "../Buttons/ResumeButton";
 import { FaCode, FaRocket, FaLightbulb } from "react-icons/fa";
 
 const About = () => {
@@ -148,6 +150,40 @@ const About = () => {
               engaging for the users.
             </p>
           </motion.div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-900 shadow-xl">
+              <p className="text-4xl font-black text-purple-600">20+</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400 uppercase tracking-[0.35em] font-bold">
+                Projects Delivered
+              </p>
+            </div>
+            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-900 shadow-xl">
+              <p className="text-4xl font-black text-purple-600">5+</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400 uppercase tracking-[0.35em] font-bold">
+                Trusted Clients
+              </p>
+            </div>
+            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-900 shadow-xl">
+              <p className="text-4xl font-black text-purple-600">1+</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400 uppercase tracking-[0.35em] font-bold">
+                Years Experience
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <ResumeButton />
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              offset={-70}
+              className="inline-flex items-center justify-center rounded-3xl border border-purple-600 px-8 py-4 text-sm font-black text-purple-600 transition hover:bg-purple-600 hover:text-white"
+            >
+              Contact Me
+            </Link>
+          </div>
 
           {/* Feature Grid */}
           <motion.div
