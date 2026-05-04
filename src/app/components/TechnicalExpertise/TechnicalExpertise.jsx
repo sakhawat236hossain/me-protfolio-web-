@@ -7,6 +7,7 @@ const skillsGroup = [
     category: "Frontend Development",
     color: "from-cyan-400 to-blue-500",
     glow: "shadow-cyan-500/40",
+    usedIn: ["TicketBari", "Care.xyz", "Home Nest"],
     skills: [
       { name: "React.js", level: 95 },
       { name: "Next.js", level: 90 },
@@ -19,26 +20,46 @@ const skillsGroup = [
     category: "Backend & Database",
     color: "from-purple-500 to-pink-500",
     glow: "shadow-purple-500/40",
+    usedIn: ["TicketBari", "Care.xyz"],
     skills: [
       { name: "Node.js", level: 88 },
       { name: "Express.js", level: 90 },
       { name: "MongoDB", level: 85 },
       { name: "REST APIs", level: 92 },
-      { name: "Firebase", level: 80 },
+      { name: "NextAuth.js", level: 82 },
     ],
   },
   {
     category: "Tools & Deployment",
     color: "from-amber-400 to-orange-500",
     glow: "shadow-amber-500/40",
+    usedIn: ["Vercel", "GitHub", "Postman"],
     skills: [
       { name: "Git/GitHub", level: 90 },
       { name: "Vercel/Netlify", level: 88 },
       { name: "VS Code", level: 95 },
-      { name: "Figma", level: 70 },
       { name: "Postman", level: 85 },
+      { name: "TanStack Query", level: 80 },
     ],
   },
+  {
+    category: "Soft Skills",
+    color: "from-emerald-400 to-teal-500",
+    glow: "shadow-emerald-500/40",
+    usedIn: ["Team collaboration", "Client communication"],
+    skills: [
+      { name: "Time Management", level: 94 },
+      { name: "Problem Solving", level: 92 },
+      { name: "Communication", level: 90 },
+      { name: "Creative Thinking", level: 88 },
+    ],
+  },
+];
+
+const certifications = [
+  "MERN Stack Certification",
+  "Frontend Web Developer Badge",
+  "Responsive UI Design Certificate",
 ];
 
 const TechnicalExpertise = () => {
@@ -91,8 +112,7 @@ const TechnicalExpertise = () => {
               className="relative group"
             >
               <div className="h-full backdrop-blur-xl border border-slate-200 dark:border-slate-800/50 p-6 md:p-8 rounded-[2.5rem] shadow-xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] dark:hover:shadow-cyan-500/10 transition-all duration-500">
-                {/* Header */}
-                <div className="flex items-center gap-5 mb-10">
+                <div className="flex items-center gap-5 mb-4">
                   <motion.div
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.8 }}
@@ -102,12 +122,16 @@ const TechnicalExpertise = () => {
                       {group.category.charAt(0)}
                     </span>
                   </motion.div>
-                  <h3 className="text-xl font-extrabold text-slate-800 dark:text-white tracking-tight leading-tight group-hover:text-cyan-500 transition-colors">
-                    {group.category}
-                  </h3>
+                  <div>
+                    <h3 className="text-xl font-extrabold text-slate-800 dark:text-white tracking-tight leading-tight group-hover:text-cyan-500 transition-colors">
+                      {group.category}
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                      Used in: {group.usedIn.join(", ")}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Progress Bars */}
                 <div className="space-y-8">
                   {group.skills.map((skill, sIdx) => (
                     <div key={sIdx} className="space-y-3">
@@ -118,12 +142,12 @@ const TechnicalExpertise = () => {
                         <motion.span
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
                           className="text-xs font-black text-cyan-600 dark:text-cyan-400"
                         >
                           {skill.level}%
                         </motion.span>
                       </div>
-
                       <div className="h-2.5 w-full bg-slate-100 dark:bg-slate-800/80 rounded-full overflow-hidden p-[1px]">
                         <motion.div
                           initial={{ width: 0 }}
@@ -136,19 +160,44 @@ const TechnicalExpertise = () => {
                           }}
                           className={`h-full bg-gradient-to-r ${group.color} rounded-full relative group-hover:brightness-125 transition-all`}
                         >
-                          <div className="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity rounded-full animate-pulse"></div>
+                          <div className="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity rounded-full"></div>
                         </motion.div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-
               <div
                 className={`absolute -inset-1 bg-gradient-to-r ${group.color} rounded-[2.6rem] blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10`}
               ></div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-14 rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-8 shadow-xl">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8">
+            <div>
+              <p className="text-sm uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400 font-black">
+                Certifications
+              </p>
+              <h3 className="text-2xl font-black text-slate-900 dark:text-white">
+                Verified learning and credentialed practice
+              </h3>
+            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            {certifications.map((cert, idx) => (
+              <div
+                key={idx}
+                className="rounded-3xl border border-slate-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-950 shadow-sm"
+              >
+                <p className="text-sm font-semibold text-slate-800 dark:text-white">
+                  {cert}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
