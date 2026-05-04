@@ -6,6 +6,7 @@ import ExperienceTimeline from "./ExperienceTimeline/ExperienceTimeline";
 import TechnicalExpertise from "./components/TechnicalExpertise/TechnicalExpertise";
 import SkillsSection from "./SkillsSection/SkillsSection";
 import Services from "./Services/Services";
+import GithubStats from "./components/GithubStats/GithubStats";
 import ProjectsSection from "./ProjectsSection/ProjectsSection";
 import Contact from "./components/Contact/Contact";
 
@@ -57,6 +58,10 @@ export default function Home() {
 
         <motion.section id="services" className="py-10" {...fadeInUp}>
           <Services />
+        </motion.section>
+
+        <motion.section id="github-stats" className="py-20" {...fadeInUp}>
+          <GithubStats />
         </motion.section>
 
         <motion.section id="projects" className="py-20" {...fadeInUp}>
